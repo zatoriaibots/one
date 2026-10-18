@@ -1,0 +1,214 @@
+:root {
+  color-scheme: dark;
+  --bg: #060e20;
+  --bg-raise: #101a33;
+  --line: rgba(255, 255, 255, 0.14);
+  --text: #f4f7fb;
+  --muted: #c5d0e0;
+  --red: #ff4d63;
+  --ok: #b6f3c8;
+  --ok-bg: #123222;
+  --aus: #ffd7c2;
+  --aus-bg: #3a2418;
+  --focus: #ffd166;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a { color: #ffb3be; }
+a:hover { color: #fff; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+header, footer {
+  border-bottom: 1px solid var(--line);
+}
+
+footer { border-bottom: 0; border-top: 1px solid var(--line); margin-top: 48px; }
+
+nav, footer .wrap, header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+  padding: 16px 0;
+}
+
+nav a { text-decoration: none; font-weight: 650; }
+
+main { padding: 28px 0 8px; }
+
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 12px; }
+h2 { font-size: 1.35rem; margin: 36px 0 10px; }
+
+.lead { color: var(--muted); max-width: 68ch; }
+
+.hinweis {
+  margin: 16px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-raise);
+}
+
+.toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin: 18px 0;
+}
+
+.toggle button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.toggle button[aria-pressed="true"] {
+  background: #3a1020;
+  border-color: var(--red);
+}
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ok);
+  background: var(--ok-bg);
+  border: 1px solid #2f7a49;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.karten {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.karte {
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.karte h3 { margin: 0; }
+.preis { font-size: 1.8rem; font-weight: 750; margin: 0; }
+.einheit, .klein { color: var(--muted); margin: 0; }
+.streich { color: var(--muted); text-decoration: line-through; font-size: 0.95rem; }
+
+body:not(.is-yearly) .nur-jahr { display: none; }
+body.is-yearly .nur-monat { display: none; }
+
+.features { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 8px; }
+
+.feature {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.feature__status {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  vertical-align: 1px;
+}
+
+.feature--enthalten .feature__status {
+  color: var(--ok);
+  background: var(--ok-bg);
+  border: 1px solid #2f7a49;
+}
+
+.feature--ausgeschlossen {
+  color: #f3e6df;
+}
+
+.feature--ausgeschlossen s {
+  text-decoration-thickness: 2px;
+  text-decoration-color: #ffb089;
+}
+
+.feature--ausgeschlossen .feature__status {
+  color: var(--aus);
+  background: var(--aus-bg);
+  border: 1px solid #e8a07a;
+}
+
+.mark { width: 1.25rem; flex: none; font-weight: 800; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 36rem;
+  margin-top: 12px;
+}
+
+label { font-weight: 650; }
+
+input[type="email"] {
+  min-height: 48px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #071226;
+  color: var(--text);
+  font: inherit;
+}
+
+.check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-weight: 500;
+}
+
+.check input { width: 1.15rem; height: 1.15rem; margin-top: 0.2rem; flex: none; }
+
+button[type="submit"] {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: #e8001d;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0 16px;
+}
+
+.status { min-height: 1.4rem; }
+
+.agb h2 { margin-top: 28px; }
+.agb p { max-width: 75ch; }

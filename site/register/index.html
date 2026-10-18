@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registrierung — ZATORI AI</title>
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a href="/">ZATORI AI</a>
+      <nav aria-label="Seiten">
+        <a href="/preise/">Preise</a>
+        <a href="/agb/">AGB</a>
+        <a href="/register/" aria-current="page">Registrierung</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <h1>ZATORI AI Manager ist in der Pilotphase.</h1>
+    <p class="lead">Zugang auf Einladung. Die Warteliste ist die Registrierung auf /register.</p>
+
+    <form id="warteliste" data-anmeldung action="#warteliste" method="post">
+      <label for="warteliste-email">E-Mail für die Warteliste</label>
+      <input id="warteliste-email" name="email" type="email" autocomplete="email" placeholder="max@firma.de" required />
+      <label class="check" for="warteliste-b2b">
+        <input id="warteliste-b2b" name="b2b" type="checkbox" required />
+        <span>Ich bestätige, als Unternehmer im Sinne des § 14 BGB zu handeln (kein Verbraucher), und stimme den <a href="/agb/">AGB</a> und der <a href="/datenschutz/">Datenschutzerklärung</a> zu.</span>
+      </label>
+      <button type="submit">Auf die Warteliste</button>
+      <p class="status" data-status role="status"></p>
+    </form>
+
+    <h2>Pilotplatz auf der Startseite</h2>
+    <p class="lead">Dort stand bisher nur ein Satz ohne Checkbox. Dieselbe Pflicht-Checkbox gilt für „Pilotplatz anfragen“.</p>
+    <form id="pilot" data-anmeldung action="#pilot" method="post">
+      <label for="pilot-email">E-Mail-Adresse</label>
+      <input id="pilot-email" name="email" type="email" autocomplete="email" placeholder="name@firma.de" required />
+      <label class="check" for="pilot-b2b">
+        <input id="pilot-b2b" name="b2b" type="checkbox" required />
+        <span>Ich bestätige, als Unternehmer im Sinne des § 14 BGB zu handeln (kein Verbraucher), und stimme den <a href="/agb/">AGB</a> und der <a href="/datenschutz/">Datenschutzerklärung</a> zu.</span>
+      </label>
+      <button type="submit">Pilotplatz anfragen</button>
+      <p class="status" data-status role="status"></p>
+    </form>
+  </main>
+  <script src="/assets/register.js"></script>
+</body>
+</html>
